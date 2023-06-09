@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 
 // const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели", "");
 
@@ -22,9 +22,23 @@
 
 // console.log(personalMovieDB);
 
-console.log(NaN || null || !3 || undefined || 5);
-console.log(NaN || null && !3 && undefined || 5);
-console.log(5 === 5 && 3 > 1 || 5);
+// console.log(NaN || null || !3 || undefined || 5);
+// console.log(NaN || null && !3 && undefined || 5);
+// console.log(5 === 5 && 3 > 1 || 5);
+
+const iterationCount = 7;
+
+let a = "";
+for (let i = 1; i < iterationCount; i++) {
+
+    for (let j = 0; j < i; j++) {
+        a += "*";
+    }
+
+    a += "\n";
+}
+
+console.log(a);
 
 
 
