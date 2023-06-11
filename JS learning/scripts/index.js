@@ -1,43 +1,3 @@
-"use strict";
-
-const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели", "");
-
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    private: false
-};
-
-first: for (let i = 0; i < 2; i++) {
-    const lastMovieName = prompt("Один из последних просмотренный фильмов?", "");
-    const lastMovieScore = +prompt("На сколько оцените его?", "");
-
-    if (lastMovieName === "" || lastMovieName === null || lastMovieName.length > 50) {
-        console.log("Возникла ошибка, повторите ввод");
-        i--;
-        continue first;
-    }
-
-    personalMovieDB["movies"][lastMovieName] = lastMovieScore;
-}
-
-console.log(personalMovieDB);
-const DBCount = personalMovieDB["count"];
-
-if (DBCount < 10) {
-    console.log("мало фильмов");
-}
-else if (DBCount > 9 && DBCount < 31) {
-    console.log("классический зритель");
-}
-else if (DBCount > 31) {
-    console.log("киноман жесточайший");
-} else {
-    console.log("ошибка");
-}
-
 
 // console.log(NaN || null || !3 || undefined || 5);
 // console.log(NaN || null && !3 && undefined || 5);
@@ -81,3 +41,7 @@ const arr = [1, 2, 3, 4, 5, 6, 7];
 
 enumirationArray();
 
+const str = "Hello world!";
+
+console.log(str.slice(6, 11));
+console.log(str); 
