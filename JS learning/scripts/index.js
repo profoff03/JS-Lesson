@@ -70,5 +70,14 @@ else if (DBCount > 31) {
 
 // console.log(result);
 
+function enumirationArray(list) {
+    for (let i = 0; i < 5; i++) {
+        if (i === 3) return;
+        console.log(`index: ${i}`)
+    }
+}
 
+const arr = [1, 2, 3, 4, 5, 6, 7];
+
+enumirationArray();
 
