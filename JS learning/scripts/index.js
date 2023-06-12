@@ -44,4 +44,5 @@ enumirationArray();
 const str = "Hello world!";
 
 console.log(str.slice(6, 11));
+console.log(str.slice(6));
 console.log(str); 
