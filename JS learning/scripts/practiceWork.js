@@ -69,16 +69,3 @@ function writeYourGenres() {
 }
 
 writeYourGenres();
-
-function getCoupeNumber(seatNumber) {
-
-    if (isNaN(seatNumber) || seatNumber < 0 || !parseInt(seatNumber)) {
-        return "Ошибка. Проверьте правильность введенного номера места";
-    }
-
-    if (seatNumber == 0 || seatNumber > 36) {
-        return "Таких мест в вагоне не существует";
-    }
-
-    return (Math.ceil(seatNumber / 4));
-}
