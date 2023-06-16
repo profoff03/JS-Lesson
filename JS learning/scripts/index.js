@@ -30,19 +30,61 @@
 
 // console.log(result);
 
-function enumirationArray(list) {
-    for (let i = 0; i < 5; i++) {
-        if (i === 3) return;
-        console.log(`index: ${i}`)
+// function enumirationArray(list) {
+//     for (let i = 0; i < 5; i++) {
+//         if (i === 3) return;
+//         console.log(`index: ${i}`)
+//     }
+// }
+
+// const arr = [1, 2, 3, 4, 5, 6, 7];
+
+// enumirationArray();
+
+// const str = "Hello world!";
+
+// console.log(str.slice(6, 11));
+// console.log(str.slice(6));
+// console.log(str); 
+
+const matrix = function (n) {
+    let matrix = "";
+
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            if (i === j) {
+                matrix += "1 ";
+            } else {
+                matrix += "0 ";
+            }
+        }
+
+        matrix += "\n";
     }
+
+
+    return matrix;
+};
+
+console.log(matrix(10));
+
+
+//callback function
+const err = function () {
+    console.log("error");
 }
 
-const arr = [1, 2, 3, 4, 5, 6, 7];
+const callbackExamle = function (time, callback) {
+    setTimeout(() => { },
+        "1000");
 
-enumirationArray();
+    console.log("done!");
+    callback();
+};
 
-const str = "Hello world!";
+callbackExamle(400, err);
 
-console.log(str.slice(6, 11));
-console.log(str.slice(6));
-console.log(str); 
+
+let arr = [];
+
+arr.
