@@ -68,6 +68,23 @@ const matrix = function (n) {
 
 console.log(matrix(10));
 
+const longest_Country_Name = function (country_names) {
+    //split the string by space and find out which one is longer
+    let max_lenght = country_names[0];
+    for (let i = 1; i < country_names.length; i++) {
+        if (country_names[i].length > max_lenght.length) {
+            max_lenght = country_names[i];
+            console.log("done");
+        }
+        console.log(max_lenght);
+    }
+
+    return max_lenght;
+}
+
+console.log(longest_Country_Name(["Россия", "Украина", "Соединённые Штаты Америки"]));
+
+
 
 //callback function
 const err = function () {
@@ -83,8 +100,3 @@ const callbackExamle = function (time, callback) {
 };
 
 callbackExamle(400, err);
-
-
-let arr = [];
-
-arr.
