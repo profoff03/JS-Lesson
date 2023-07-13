@@ -11,7 +11,7 @@ const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
 function availableCurr(arr, missingCurr) {
     
-    result = "";
+    let result = "";
 
     arr.length === 0 ? result = "Нет доступных валют" : result = "Доступные валюты:\n";
 
@@ -21,5 +21,5 @@ function availableCurr(arr, missingCurr) {
         }
     }
 
-    return resizeBy
+    return result;
 }
