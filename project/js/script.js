@@ -24,32 +24,32 @@ const movieDB = {
     ]
 };
 
-const adBlock = document.querySelectorAll(".promo__adv img"),
-    poster = document.querySelector(".promo__bg"),
-    genre = poster.querySelector(".promo__genre"),
-    listMovies = document.querySelector(".promo__interactive-list");
-// 1
-adBlock.forEach(item => {
-    item.remove();
-});
+// const adBlock = document.querySelectorAll(".promo__adv img"),
+//     poster = document.querySelector(".promo__bg"),
+//     genre = poster.querySelector(".promo__genre"),
+//     listMovies = document.querySelector(".promo__interactive-list");
+// // 1
+// adBlock.forEach(item => {
+//     item.remove();
+// });
 
-// 2
-genre.textContent = "Драма";
-// 3
-poster.style.backgroundImage = 'url("img/bg.jpg")';
+// // 2
+// genre.textContent = "Драма";
+// // 3
+// poster.style.backgroundImage = 'url("img/bg.jpg")';
 
 
-// 4
-// first option
+// // 4
+// // first option
 
-let movieHTMLList = "";
-movieDB.movies.forEach(item => {
-    movieHTMLList += `<li class="promo__interactive-item">${item}
-    <div class="delete"></div>
-    </li>\n`;
-});
+// let movieHTMLList = "";
+// movieDB.movies.forEach(item => {
+//     movieHTMLList += `<li class="promo__interactive-item">${item}
+//     <div class="delete"></div>
+//     </li>\n`;
+// });
 
-listMovies.insertAdjacentHTML("beforeend", movieHTMLList);
+// listMovies.insertAdjacentHTML("beforeend", movieHTMLList);
 
 // second option
 
