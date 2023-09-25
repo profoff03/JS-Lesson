@@ -24,10 +24,10 @@ const movieDB = {
     ]
 };
 
-// const adBlock = document.querySelectorAll(".promo__adv img"),
-//     poster = document.querySelector(".promo__bg"),
-//     genre = poster.querySelector(".promo__genre"),
-//     listMovies = document.querySelector(".promo__interactive-list");
+const adBlock = document.querySelectorAll(".promo__adv img"),
+    poster = document.querySelector(".promo__bg"),
+    genre = poster.querySelector(".promo__genre"),
+    listMovies = document.querySelector(".promo__interactive-list");
 // // 1
 // adBlock.forEach(item => {
 //     item.remove();
