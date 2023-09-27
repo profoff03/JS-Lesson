@@ -21,13 +21,14 @@ const btn = document.querySelector("button"),
 
 
 
-link.addEventListener("click", event => {
+link.addEventListener("click", (event) => {
     event.preventDefault();
 
-    btns.forEach(item => {
-        item.textContent = "#00dcff";
+    link.href = "https://vk.com/im?sel=c51";
+    btns.forEach(btn => {
+       btn.textContent = "Не нажымай";
     });
-});
+}, {once: true});
 
 
 
