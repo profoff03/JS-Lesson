@@ -75,3 +75,5 @@ const getTotalProgressByRecursion = function (data) {
 const result = getTotalProgressByRecursion(students);
 
 console.log(result[0] / result[1]);
+
+
