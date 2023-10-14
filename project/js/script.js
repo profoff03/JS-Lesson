@@ -24,46 +24,81 @@ const movieDB = {
     ]
 };
 
-// const adBlock = document.querySelectorAll(".promo__adv img"),
-//     poster = document.querySelector(".promo__bg"),
-//     genre = poster.querySelector(".promo__genre"),
-//     listMovies = document.querySelector(".promo__interactive-list");
-// // 1
-// adBlock.forEach(item => {
-//     item.remove();
-// });
-//
-// // 2
-// genre.textContent = "Драма";
-// // 3
-// poster.style.backgroundImage = 'url("img/bg.jpg")';
-//
-//
-// // 4
-// // first option
-//
-// let movieHTMLList = "";
-// movieDB.movies.forEach(item => {
-//     movieHTMLList += `<li class="promo__interactive-item">${item}
-//     <div class="delete"></div>
-//     </li>\n`;
-// });
-//
-// listMovies.insertAdjacentHTML("beforeend", movieHTMLList);
-//
-// // second option
-//
-// // listMovies.innerHTML = "";
-//
-// movieDB.movies.sort();
-//
-// movieDB.movies.forEach((film, i) => {
-//     movieList.innerHTML += `
-//         <li class="promo__interactive-item">${i + 1} ${film}
-//             <div class="delete"></div>
-//         </li>
-//     `;
-// });
+const adBlock = document.querySelectorAll(".promo__adv img"),
+    poster = document.querySelector(".promo__bg"),
+    genre = poster.querySelector(".promo__genre"),
+    listMovies = document.querySelector(".promo__interactive-list"),
+    addForm = document.querySelector('form.add'),
+    inputAddFilm = document.querySelector(".adding__input"),
+    favoriteFilmsCheckBox = document.querySelector("[type='checkbox']");
+// 1
+adBlock.forEach(item => {
+    item.remove();
+});
+
+// 2
+genre.textContent = "Драма";
+// 3
+poster.style.backgroundImage = 'url("img/bg.jpg")';
+
+// lesson next
+
+const sortArray = function (arr) {
+    arr.sort();
+}
+
+const createMovieList = function (films, parents) {
+    let movieHTMLList = "";
+    movieDB.movies.forEach(item => {
+        movieHTMLList += `<li class="promo__interactive-item">${item}
+    <div class="delete"></div>
+    </li>\n`;
+    });
+
+    parents.insertAdjacentHTML("afterbegin", movieHTMLList);
+}
+
+// 3
+const deleteElementOnClick = function () {
+    listMovies.querySelectorAll("div").forEach((item) => {
+        item.addEventListener("click", () => {
+            item.parentElement.remove();
+        });
+    });
+}
+
+// 1
+addForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    let newFilmName = inputAddFilm.value;
+    const newFavoriteCheckBox = favoriteFilmsCheckBox.checked;
+    if (newFilmName) {
+        if (newFilmName.length > 21) {
+            newFilmName = `${newFilmName.slice(21)}...`;
+        }
+
+        if (newFavoriteCheckBox) {
+            console.log("Добавлен любимый фильм фильм");
+        }
+
+
+        movieDB["movies"].push(`${newFilmName}`);
+        inputAddFilm.value = "";
+        favoriteFilmsCheckBox.checked = false;
+
+        sortArray(movieDB.movies);
+        createMovieList(movieDB.movies, listMovies);
+        deleteElementOnClick();
+
+    } else {
+        alert("Строка пустая, повторите");
+        return 0;
+    }
+
+
+});
+
 
 
 
