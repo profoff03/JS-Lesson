@@ -4,11 +4,18 @@
 const deadline = "2023-11-20T13:40:55.000Z";
 
 const setTimeRemaining = function (endtime) {
-    const time = Date.parse(endtime) - Date.parse(new Date()),
-        day = Math.floor(time / (1000 * 60 * 60 * 24)),
-        hour = Math.floor(time / (1000 * 60 * 60) % 24),
-        minute = Math.floor((time / 1000 / 60) % 60),
-        second = Math.floor((time / 1000) % 60);
+    const time = Date.parse(endtime) - Date.parse(new Date());
+    const day = Math.floor(time / (1000 * 60 * 60 * 24));
+    const hour = Math.floor(time / (1000 * 60 * 60) % 24);
+    const minute = Math.floor((time / 1000 / 60) % 60);
+    const second = Math.floor((time / 1000) % 60);
+
+    if (time < 0) {
+        day = 0;
+        hour = 0;
+        minute = 0;
+        second = 0;
+    }
 
     return { time, day, hour, minute, second }
 }
@@ -30,7 +37,7 @@ const setClock = function (selector, endtime) {
         timeInterval = setInterval(updateClock, 1000);
 
     updateClock();
-    function updateClock () {
+    function updateClock() {
         const timeSet = setTimeRemaining(endtime);
 
         days.textContent = getZero(timeSet.day);
