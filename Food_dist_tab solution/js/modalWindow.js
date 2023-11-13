@@ -6,7 +6,10 @@ const modalWindowTriggerOpen = document.querySelectorAll("[data-modal]"),
 
 
 const openModalWindow = function () {
+    modalWindow.classList.remove("hide");
     modalWindow.classList.add("show");
+    document.body.style.overflow = "hidden";
+    clearInterval(modalWinowTimerId);
 }
 
 const closeModalWindow = function () {
@@ -34,6 +37,18 @@ document.addEventListener("keydown", (e) => {
         closeModalWindow();
     }
 })
+
+const modalWinowTimerId = setTimeout(openModalWindow, 5000);
+
+const showModalWindowByScroll = function() {
+    if( window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {  
+        openModalWindow();
+        window.removeEventListener("scroll", showModalWindowByScroll);
+    }
+}
+
+
+window.addEventListener("scroll", showModalWindowByScroll);
 
 
 
