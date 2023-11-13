@@ -9,11 +9,12 @@ const openModalWindow = function () {
     modalWindow.classList.add("show");
 }
 
-const closeModalWindow = function() {
+const closeModalWindow = function () {
     modalWindow.classList.remove("show");
     modalWindow.classList.add("hide");
+    document.body.style.overflow = "";
 }
-   
+
 //нужно добавить выход через клику вне модального окна и при нажатии кнопки escape
 
 modalWindowTriggerOpen.forEach(item => {
@@ -21,6 +22,21 @@ modalWindowTriggerOpen.forEach(item => {
 });
 
 modalWindowTriggerClose.addEventListener("click", closeModalWindow);
+
+modalWindow.addEventListener("click", (e) => {
+    if(e.target === modalWindow) {
+        closeModalWindow();
+    }
+})
+
+document.addEventListener("keydown", (e) => {
+    if (e.code === "Escape" && modalWindow.classList.contains("show")) {
+        closeModalWindow();
+    }
+})
+
+
+
 
 
 
